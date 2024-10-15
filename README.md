@@ -27,6 +27,10 @@ backends supporting Redis, Memcached, and Amazon DynamoDB.
 ## Install
 
 ```shell
+> pip install git+https://github.com/qiye45/fastapi-cache-all.git
+```
+
+```shell
 > pip install fastapi-cache2
 ```
 
