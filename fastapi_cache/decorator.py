@@ -79,8 +79,8 @@ def _uncacheable(request: Optional[Request]) -> bool:
         return True
     if request is None:
         return False
-    if request.method != "GET":
-        return True
+    # if request.method != "GET":
+    #     return True
     return request.headers.get("Cache-Control") == "no-store"
 
 
@@ -182,8 +182,8 @@ def cache(
                     exc_info=True,
                 )
                 ttl, cached = 0, None
-
-            if cached is None  or (request is not None and request.headers.get("Cache-Control") == "no-cache") :  # cache miss
+            # remove  'or (request is not None and request.headers.get("Cache-Control") == "no-cache")'
+            if cached is None  :  # cache miss
                 result = await ensure_async_func(*args, **kwargs)
                 to_cache = coder.encode(result)
 
