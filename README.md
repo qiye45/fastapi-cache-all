@@ -9,8 +9,7 @@
 `fastapi-cache` is a tool to cache FastAPI endpoint and function results, with
 backends supporting Redis, Memcached, and Amazon DynamoDB.
 
-**Support post and other methods of caching, not affected by the request header no-cache
-**
+**Support post and other methods of caching, not affected by the request header no-cache**
 
 ## Features
 
