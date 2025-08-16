@@ -221,6 +221,10 @@ def cache(
                         return response
 
                 result = cast(R, coder.decode_as_type(cached, type_=return_type))
+                media_type = result.get("media_type")
+                # 适配 xml 响应
+                if return_type is Response and media_type == "text/xml":
+                    result = Response(content=result.get("body"), media_type="text/xml")
 
             return result
 
